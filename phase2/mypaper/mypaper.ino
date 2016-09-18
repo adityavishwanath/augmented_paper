@@ -1,12 +1,12 @@
 /* HC-SR04 Sensor
    https://www.dealextreme.com/p/hc-sr04-ultrasonic-sensor-distance-measuring-module-133696
-  
+
    This sketch reads a HC-SR04 ultrasonic rangefinder and returns the
    distance to the closest object in range. To do this, it sends a pulse
-   to the sensor to initiate a reading, then listens for a pulse 
-   to return.  The length of the returning pulse is proportional to 
+   to the sensor to initiate a reading, then listens for a pulse
+   to return.  The length of the returning pulse is proportional to
    the distance of the object from the sensor.
-     
+
    The circuit:
   * VCC connection of the sensor attached to +5V
   * GND connection of the sensor attached to ground
@@ -25,13 +25,13 @@ const int echoPin2 = 5;
 
 void setup() {
   // initialize serial communication:
-  Serial.begin(115200);  
+  Serial.begin(115200);
   Serial.println("Starting arduino code");
 }
 
 void loop()
 {
-  // establish variables for duration of the ping, 
+  // establish variables for duration of the ping,
   // and the distance result in inches and centimeters:
   long duration1, inches1, cm1;
   long duration2, inches2, cm2;
@@ -50,13 +50,13 @@ void loop()
 
   pinMode(echoPin1, INPUT);
   duration1 = pulseIn(echoPin1, HIGH);
-  
+
   // convert the time into a distance
   inches1 = microsecondsToInches(duration1);
   cm1 = microsecondsToCentimeters(duration1);
 
   // Repeating the above for the other sonar
-  
+
   pinMode(trigPin2, OUTPUT);
   digitalWrite(trigPin2, LOW);
   delayMicroseconds(2);
@@ -66,17 +66,17 @@ void loop()
 
   pinMode(echoPin2, INPUT);
   duration2 = pulseIn(echoPin2, HIGH);
-  
+
   inches2 = microsecondsToInches(duration2);
   cm2 = microsecondsToCentimeters(duration2);
 
-  if (inches1 <= 10 && inches2 <= 10) {
+  if (inches1 <= 12 && inches2 <= 12) {
   Serial.print("x: ");
   Serial.print(inches1);
   Serial.print("in, ");
   Serial.print(cm1);
   Serial.print("cm\t");
-  
+
   Serial.print("y: ");
   Serial.print(inches2);
   Serial.print("in, ");
@@ -84,7 +84,7 @@ void loop()
   Serial.print("cm");
   Serial.println();
   }
-  delay(100);
+  delay(50);
 }
 
 long microsecondsToInches(long microseconds)

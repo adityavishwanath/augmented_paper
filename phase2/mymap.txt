@@ -1,0 +1,65 @@
+Student center
+x: 7in, 18cm	y: 5in, 14cm
+x: 6in, 15cm	y: 5in, 12cm
+x: 6in, 17cm	y: 4in, 12cm
+x: 6in, 15cm	y: 5in, 15cm
+x: 7in, 17cm	y: 4in, 12cm
+x: 6in, 15cm	y: 4in, 11cm
+x: 6in, 16cm	y: 4in, 11cm
+AQR
+x: 6in, 15cm	y: 7in, 19cm
+x: 6in, 16cm	y: 8in, 20cm
+x: 6in, 16cm	y: 8in, 20cm
+x: 6in, 17cm	y: 8in, 21cm
+x: 6in, 17cm	y: 8in, 21cm
+x: 6in, 16cm	y: 8in, 21cm
+x: 6in, 16cm	y: 8in, 21cm
+Microsoft
+x: 5in, 13cm	y: 8in, 21cm
+x: 5in, 13cm	y: 9in, 23cm
+x: 4in, 12cm	y: 8in, 22cm
+x: 5in, 13cm	y: 8in, 21cm
+x: 5in, 13cm	y: 8in, 22cm
+x: 5in, 13cm	y: 8in, 21cm
+Johnson Ice rink
+x: 3in, 8cm	y: 5in, 13cm
+x: 3in, 9cm	y: 4in, 12cm
+x: 3in, 8cm	y: 4in, 11cm
+x: 3in, 8cm	y: 4in, 11cm
+x: 3in, 8cm	y: 4in, 12cm
+x: 4in, 10cm	y: 4in, 12cm
+x: 4in, 12cm	y: 5in, 13cm
+x: 4in, 11cm	y: 5in, 13cm
+x: 4in, 10cm	y: 5in, 13cm
+x: 5in, 13cm	y: 5in, 13cm
+Johnson Lobby
+x: 5in, 13cm	y: 4in, 11cm
+x: 4in, 12cm	y: 4in, 10cm
+x: 5in, 12cm	y: 4in, 12cm
+x: 4in, 11cm	y: 4in, 10cm
+x: 4in, 12cm	y: 4in, 11cm
+x: 4in, 12cm	y: 4in, 11cm
+x: 4in, 12cm	y: 4in, 11cm
+x: 4in, 12cm	y: 4in, 11cm
+x: 4in, 12cm	y: 4in, 11cm
+Rockwell
+x: 5in, 13cm	y: 3in, 9cm
+x: 5in, 14cm	y: 2in, 6cm
+x: 5in, 13cm	y: 3in, 8cm
+x: 5in, 13cm	y: 2in, 6cm
+x: 5in, 13cm	y: 2in, 6cm
+x: 5in, 12cm	y: 2in, 6cm
+x: 5in, 12cm	y: 2in, 6cm
+a16z
+x: 9in, 23cm	y: 8in, 21cm
+x: 9in, 24cm	y: 9in, 23cm
+x: 9in, 24cm	y: 8in, 22cm
+x: 9in, 23cm	y: 8in, 22cm
+x: 9in, 23cm	y: 8in, 22cm
+x: 9in, 23cm	y: 9in, 23cm
+x: 9in, 24cm	y: 10in, 25cm
+Massachusettes avenue
+x: 9in, 24cm	y: 5in, 15cm
+x: 9in, 23cm	y: 6in, 16cm
+x: 9in, 23cm	y: 6in, 17cm
+x: 8in, 22cm	y: 6in, 15cm
