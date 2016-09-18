@@ -7,6 +7,12 @@
 
 import serial #Import Serial Library
 import json
+import webbrowser
+import time
+
+# set the baudrate and serial port
+# The port will differ for Windows and Mac
+arduinoSerialData = serial.Serial('/dev/cu.usbmodem1421', 115200)
 
 X_OFFSET = 0
 Y_OFFSET = 0
@@ -54,14 +60,11 @@ y_top = 0
 x_right = 0
 y_bot = 0
 
-# set the baudrate and serial port
-arduinoSerialData = serial.Serial('com4', 115200)
-
 # reading from serial
 while (1==1):
     if (arduinoSerialData.inWaiting()>0):
         myData = arduinoSerialData.readline()
-        if (myData):
+        if myData:
             data = myData.split(",")
             del last_five_x[0]
             del last_five_y[0]
@@ -76,4 +79,7 @@ while (1==1):
                 y_top = (int(coordinates[0]['y']) + int(coordinates[1]['y']))/2
                 y_bot = (int(coordinates[2]['y']) + int(coordinates[3]['y']))/2
                 if avg_x > x_left and avg_x < x_right and avg_y > y_bot and avg_y < y_top:
-                    print key
+                    url = "https://www.google.com/&q=%s" % item['description']
+                    print url #sanity check
+                    webbrowser.open_new(url)
+                    time.sleep(5) #sleep for 5 seconds while the browser loads

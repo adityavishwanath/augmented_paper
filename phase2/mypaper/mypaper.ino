@@ -70,18 +70,18 @@ void loop()
   cm2 = microsecondsToCentimeters(duration2);
 
   if (inches1 <= 12 && inches2 <= 12) {
-  //Serial.print("x: ");
-  Serial.print(inches1);
-  //Serial.print("in, ");
-  //Serial.print(cm1);
-  //Serial.print("cm\t");
+  //Serial.println("x: ");
+  Serial.println(inches1);
+  //Serial.println("in, ");
+  //Serial.println(cm1);
+  //Serial.println("cm\t");
 
-  //Serial.print("y: ");
-  Serial.print(",");
-  Serial.print(inches2);
-  //Serial.print("in, ");
-  //Serial.print(cm2);
-  //Serial.print("cm");
+  //Serial.println("y: ");
+  Serial.println(",");
+  Serial.println(inches2);
+  //Serial.println("in, ");
+  //Serial.println(cm2);
+  //Serial.println("cm");
   Serial.println();
   }
   delay(50);
