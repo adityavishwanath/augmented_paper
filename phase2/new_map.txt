@@ -1,0 +1,8 @@
+Student center,17,12
+AQR,16, 21
+Microsoft,13,22
+Johnson Ice rink,12,9
+Johnson Lobby,11.5,12.5
+Rockwell,12,10
+a16z,24,22
+Massachusettes avenue,23,16
