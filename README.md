@@ -1,2 +1,2 @@
 #What?!
-We tried a moonshot and this repository is a binary mess of all the code we wrote to hack together our hardware project. If you're _really_ interested in knowing what we actually did, please contact the contributor(s).
+We tried a moonshot and this repository is a binary mess of all the code we wrote to hack together our hardware project in under 24 hours. If you're _really_ interested in knowing what we actually did, please contact the contributor(s). This project uses the Google Cloud Vision API, an Arduino board, and some sensors.
