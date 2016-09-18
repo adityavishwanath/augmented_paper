@@ -44,7 +44,7 @@ def main(photo_file):
             }]
         })
         response = service_request.execute()
-        with open('output.txt', 'w') as outfile:
+        with open('output.json', 'w') as outfile:
             json.dump(response, outfile)
 
 
@@ -61,6 +61,7 @@ def main(photo_file):
                     X_FACTOR = (abs(int(coordinates[0]['x']) - int(coordinates[1]['x'])) + abs(int(coordinates[2]['x']) - int(coordinates[3]['x'])))/2.0
                     Y_FACTOR = (abs(int(coordinates[0]['y']) - int(coordinates[2]['y'])) + abs(int(coordinates[1]['y']) - int(coordinates[3]['y'])))/2.0
                     print "DONE WITH COMPUTER VISION. PLEASE PLACE THE PAPER ON THE CARDBOARD."
+                    break
         return 0
 
 if __name__ == '__main__':
