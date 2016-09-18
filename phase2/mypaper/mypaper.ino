@@ -26,8 +26,7 @@ const int echoPin2 = 5;
 void setup() {
   // initialize serial communication:
   Serial.begin(115200);
-  Serial.println("Starting arduino code");
-}
+  }
 
 void loop()
 {
@@ -72,16 +71,16 @@ void loop()
 
   if (inches1 <= 12 && inches2 <= 12) {
   //Serial.print("x: ");
-  //Serial.print(inches1);
+  Serial.print(inches1);
   //Serial.print("in, ");
-  Serial.print(cm1);
+  //Serial.print(cm1);
   //Serial.print("cm\t");
 
   //Serial.print("y: ");
-  //Serial.print(inches2);
-  //Serial.print("in, ");
   Serial.print(",");
-  Serial.print(cm2);
+  Serial.print(inches2);
+  //Serial.print("in, ");
+  //Serial.print(cm2);
   //Serial.print("cm");
   Serial.println();
   }

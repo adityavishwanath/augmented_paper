@@ -3,15 +3,35 @@
 # This code reads the data being printed out to the serial
 # The data is the processed ***
 
-import serial #Import Serial Library
+# DETERMINE ABC COORDINATE USING SONAR
 
-# set the baudrate and serial port
-arduinoSerialData = serial.Serial('com4', 115200)
+import serial #Import Serial Library
+import json
+
+X_OFFSET = 0
+Y_OFFSET = 0
+X_FACTOR = 0.0
+Y_FACTOR = 0.0
 
 # read in text file with hard coded values
 # create a map of text to the web
 f = open('new_map.txt', 'r')
 nextline = f.readline()
+
+# read in json file with EVERYTHING
+with open('output.json') as json_data:
+    response = json.load(json_data)
+
+for item in response['responses'][0]['textAnnotations']:
+    if item['description'] != None:
+        if item['description'] == 'ABC':
+            coordinates = item['boundingPoly']['vertices']
+            X_OFFSET = int(coordinates[0]['x'])
+            Y_OFFSET = int(coordinates[0]['y'])
+            X_FACTOR = (abs(int(coordinates[0]['x']) - int(coordinates[1]['x'])) + abs(int(coordinates[2]['x']) - int(coordinates[3]['x'])))/2.0
+            Y_FACTOR = (abs(int(coordinates[0]['y']) - int(coordinates[2]['y'])) + abs(int(coordinates[1]['y']) - int(coordinates[3]['y'])))/2.0
+            #print "DONE WITH COMPUTER VISION. PLEASE PLACE THE PAPER ON THE CARDBOARD."
+            break
 
 # create a dictionary mapping text to coordinates
 my_coordinates = {}
@@ -30,6 +50,9 @@ while (nextline):
 last_five_x = [0,0,0,0,0]
 last_five_y = [0,0,0,0,0]
 
+# set the baudrate and serial port
+arduinoSerialData = serial.Serial('com4', 115200)
+
 # reading from serial
 while (1==1):
     if (arduinoSerialData.inWaiting()>0):
@@ -41,8 +64,8 @@ while (1==1):
             del last_five_y[0]
             last_five_x.append(float(data[0]))
             last_five_y.append(float(data[1]))
-            avg_x = sum(last_five_x) / 5
-            avg_y = sum(last_five_y) / 5
+            avg_x = (sum(last_five_x) / 5) * X_FACTOR # add shift
+            avg_y = (sum(last_five_y) / 5) * Y_FACTOR # add shift
             for key in my_coordinates:
                 if avg_x > (my_coordinates[key][0] - 2) and avg_x < (my_coordinates[key][0] + 2) and avg_y > (my_coordinates[key][1] - 2) and avg_y < (my_coordinates[key][1] + 2):
                     print key
